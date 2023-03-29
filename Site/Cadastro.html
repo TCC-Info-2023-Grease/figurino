@@ -2,60 +2,51 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="estilos/stylecad.css" />
 	<title>Site figurino</title>
 </head>
 <body>
-	<div class="main">	
-	
-		<button class="btnLog" id="btnAcessar" onclick="abrirForm()">
-			Acessar
+	<div class="main">
 		
-		</button>
+			
+	
 		<!--Botão para abrir o form-->
-
-
+		<button class="btnLog" id="btnAcessar" onclick="abrirForm()">
+			<p class="p2"> Acessar</p>
+		</button>
 
 		<!--O form-->
 		<div class="form-popup" id="form-log" data-closable>	
-			<div class="principal">
-					<div class="esquerda">
-						<div class="esquerda2">oi</div>
-					</div>
-						<div class="direita">
-							<div class="LogIn"><p class="p3">Log In</p></div>
-			 				<form class="signIn">
-							<input type="text" id="user" name="user" placeholder="Usuário" required>
-							<input type="email" id="email" name="email" placeholder="Email" required>
-							<input type="password" id="pwd" name="pwd" placeholder="Senha"required data-closable="">
-							<button type="submit" class="btnEntrar"value="submit"><p class="p2">Entrar</p></button>
-							<button class="close" formnovalidate>&times;</button>
-							
-							</form> 
-						
-							
-					
-	
-				        </div>
+			<div class="principal">		
+				<div class="direita">
+					<div class="LogIn"><p class="p3">Log In</p></div>
+
+					<button onclick="fecharForm()" class="close" formnovalidate>&times;</button>
+
+					<form class="signIn">
+						<input type="text" id="user" name="user" placeholder="Usuário" required>
+						<input type="email" id="email" name="email" placeholder="Email" required>
+						<input type="password" id="pwd" name="pwd" placeholder="Senha"required>
+						<button type="submit" class="btnEntrar"value="submit"><p class="p2">Cadastrar</p></button>
+					</form> 
+				</div>
 			</div>
 		</div>		
 	</div>
 		
+	<!--Função de esconder e abrir pelo botão-->
+	<script>
+		function abrirForm(){
+			document.getElementById("form-log").style.display = "block";
+			document.getElementById("btnAcessar").style.display = "none";
+		}
 		
-		<!--Função de esconder e abrir pelo botão-->
-		<script>
-			function abrirForm(){
-				document.getElementById("form-log").style.display = "block";
-				
-			
-				document.getElementById("btnAcessar").style.display = "none";
-			}
-		</script>
-	
-	</form> 
+		function fecharForm() {
+			document.getElementById("form-log").style.display = "none";
+			document.getElementById("btnAcessar").style.display = "inline";
 
-	</div>
-
+		}
+	</script>
 </body>
 </html>
