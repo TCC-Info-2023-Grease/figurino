@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilos/stylegeral.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar" id="nav">	
+			<a href="#about">Sobre</a>
+			<a href="#games">Jogos</a>
+			<a href="#grease">Grease</a>
+			<a href="#outfits">Figurinos</a>
+			<a href="Home.html">Início</a>
+			<div class="navbarRight">
+			<a href="Login.html" >Login</a>
+			<a href="Cadastro.html" >Cadastro</a>	
+		</div>
+        <a href="javascript:void(0);" class="icon" onclick="menuresponsivo()">
+			<i class="fa fa-bars"></i>
+		</a>
+        <!--Função de abrir menu responsivo-->
+	<script>
+		function menuresponsivo() {
+		  var x = document.getElementById("nav");
+		  if (x.className === "navbar") {
+			x.className += " responsive";
+			
+		  } else  {
+			x.className = "navbar";
+		  }
+		}
+		</script>
+		</div>
+    </div>
+    
+</body>
+</html>
