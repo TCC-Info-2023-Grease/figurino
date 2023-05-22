@@ -1,0 +1,160 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: content-box;
+}
+@font-face {
+   font-family: 'Roboto';
+   src: url('Roboto-Thin.woff2') format('woff2'),
+       url('Roboto-Thin.woff') format('woff');
+   font-weight: normal;
+   font-style: italic;
+   font-display: swap;
+   
+}
+
+div.main {
+   display: flex; 
+   justify-content: center;  
+   
+}
+body{
+   background-color: #1A1A1A;   
+}
+.footer {
+   position: fixed;
+   display: list-item;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 2.5rem; 
+   animation: expandir 1.2s;
+   background: linear-gradient(
+    0deg,
+    var(--azulClaroRetro) 25%,
+    var(--verdeRetro) 25% 50%,
+    var(--vermelhoClaroRetro) 50% 75%,
+    var(--LaranjaRetro) 75%
+  );
+}
+@-webkit-keyframes expandir {
+   0% {width: 0%;}
+   100% {width: 100%;}  
+}
+.gradiente {
+   position: fixed;
+   display: list-item;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 10rem; 
+   background: linear-gradient(
+   to bottom,  #eeeeee00 0%, var(--pretoRetro) 130%);
+   z-index: 1;  
+   animation: aparecer 3s;
+}
+@-webkit-keyframes aparecer {
+   0% {opacity: 0%;}
+   100% {opacity: 100%;}  
+}
+
+/*Elementos gerais da navbar*/
+.navbar{
+   z-index: 10;
+   display: flex;
+   font-size: x-large;  
+   justify-content: center ;
+   width: 100%;
+   background-color: var(--pretoRetro);
+   height: 3.5rem;
+   box-shadow: 0px 1px 15px black;
+   overflow: hidden;
+   list-style-type: none;
+   position: fixed;
+}
+
+/*Elementos gerais da navbar*/
+
+
+/*Elementos visuais dos textos da navbar*/
+a{
+   text-decoration: none;
+   padding: 14px 18px 0px 10px;
+   color: var(--brancoRetro);
+   font-family:'Roboto'; 
+}
+
+
+/*Elementos do lado direito da navbar*/
+.navbarRight{
+ position: absolute;
+ right: 10px;
+ top: 13px;
+}
+/*Mudança da coloração de texto da navbar*/
+ a:hover{
+   color: var(--LaranjaRetro);
+ }
+ .navbar .icon{
+   display: none;
+ }
+ .icon{
+   width: fit-content;
+ }
+ 
+ 
+ /*Ativação do menu responsivo*/
+ @media screen and (max-width: 985px) {
+   .navbar a:not(.icon) {display: none;}
+
+   .navbar a.icon {
+     display: flex;
+     position: absolute;
+     left: 5px;
+   }
+}
+@media screen and (max-width: 985px) {
+   .navbar.responsive {position: relative;}
+   .navbar.responsive .icon {
+     position: absolute;
+     right: 0;
+     top: 0;
+   }
+  
+   .navbar.responsive a:not(.icon){
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   .navbar.responsive   {
+      animation: navcresce 1s;
+      height: 5.5rem;
+      overflow: auto;
+      box-shadow: 0px 1px 15px black;
+      display: block; 
+   }
+   
+   .navbarRight{
+      position: static;
+   } 
+ }
+ @-webkit-keyframes navcresce {
+   0% {height: 3.5rem;}
+   100% {height: 5.5rem}  
+}
+ 
+ 
+ /*Cores base do site*/
+ :root{
+   --vermelhoClaroRetro: #C76E7A;
+   --vermelhoEscuroRetro: #895570;
+   --azulClaroRetro: #A1C1D1;
+   --azulEscuroRetro:#6A87A5;
+   --verdeRetro: #95D2B4;
+   --LaranjaRetro: #FAB18B;
+   --begeRetro: #EAE5D9;
+   --pretoRetro: #1A1A1A;
+   --brancoRetro: #f1f1f1;
+ }
+
+
